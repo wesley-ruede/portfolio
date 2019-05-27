@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Job
 
-def home(requst): #imported urls.py
-	return render(requst, 'jobs/home.html') #return a generated file named home.html
+def home(request): #imported urls.py
+	jobs = Job.objects # access Job model
+	return render(request, 'jobs/home.html', {'jobs':jobs}) #return a generated file named home.html + get jobs dictionary
