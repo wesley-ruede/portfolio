@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def home(requst): #imported urls.py
+	return render(requst, 'jobs/home.html') #return a generated file named home.html

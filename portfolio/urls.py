@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+import jobs.views #imports views.py fom jobs
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('admin/', admin.site.urls), #access to admin
+    path('', jobs.views.home, name='home'), #go to jobs.views home function
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #image views
