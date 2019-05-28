@@ -73,7 +73,7 @@
 		<div class="album py-5 bg-light">
 			<div class="container">
 
-				<div class="row"> <!-- Job box loop -->
+				<div class="row"> <!-- Job box loop start -->
 
 
 					{% for job in jobs.all %} <!-- begin itteration through job object -->
@@ -83,12 +83,12 @@
 							<div class="card-body">
 								<p class="card-text">{{ job.summary }}</p> <!-- get summary from models.py -->
 								<small class="text-muted">9 mins</small>  <!-- changed text -->
-							</div> <!-- removed all other cards -->
-							{% endfor %} <!-- finish itteration through job object -->
+							</div> <!-- removed all other cards -->			
+						</div> 
+					</div> <!-- Job box loop finish -->
+					{% endfor %} <!-- finish itteration through job object --> <!-- fixed for loop -->
 
-
-						</div> <!-- Job box loop -->
-					</div>
+					
 				</div>
 			</div>
 		</div>
