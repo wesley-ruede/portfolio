@@ -1,5 +1,0 @@
-Today I'll be showing you how you can use Django to access an job object and view it on the web. 
-
-Well, it looks like the lights are on. Until next time then.
-
-Wes

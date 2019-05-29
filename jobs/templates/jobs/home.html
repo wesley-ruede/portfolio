@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+	{% load static from staticfiles %}  <!-- access static files with Python -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
@@ -48,7 +49,7 @@
 						<a class="nav-link" href="#">Twitter</a> <!-- changed text -->
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Resume</a> <!-- changed text -->
+						<a class="nav-link" href="{% static 'resume.pdf' %}">Resume</a> <!-- static resume -->
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Blog</a> <!-- changed text -->
@@ -67,6 +68,7 @@
 				<p>
 					<a href="mailto:email@email.com" class="btn btn-primary my-2">Email Me</a> <!-- changed text + mailto -->
 				</p>
+				<img src="{% static 'Wes.jpg' %}" height="300" /> <!-- static image -->
 			</div>
 		</section>
 
