@@ -69,11 +69,11 @@
 		
 		{% for blog in blogs.all %} <!-- begin for loop iteration -->
 		<a href=""><h3>{{ blog.title }}</h3></a> <!-- .models variable href for link to next page -->
-		{{ blog.pub_date }} <!-- .models variable -->
+		{{ blog.pub_date_pretty }} <!-- .models variable -->
 		<br />
 		<img class="img-fluid" src="{{ blog.image.url }}" height="200" width="200" /> <!-- .models variable img-fluid for better text wrap and height/width to designate size of img directly  -->
 		<br />
-		<p>{{ blog.body }}</p> <!-- .models variable -->
+		<p>{{ blog.summary }}</p> <!-- returns 100 characters max from summary function -->
 		{% endfor %} <!-- finish for loop iteration -->
 		
 		</div>
