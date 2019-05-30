@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Jekyll v3.8.5">
-	<title>Album example · Bootstrap</title>
+	<title>Wesley Ruede</title> <!-- Title replaced  -->
 
 	<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -38,25 +37,25 @@
 </head>
 <body>
 	<header> <!-- imported Nav from Navbar -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="#">Wesley Ruede</a>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Nav -->
+			<a class="navbar-brand" href="{% url 'home' %}">Wesley Ruede</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ml-auto"> <!-- moved nav-items left -->
-					<li class="nav-item active"> 
-						<a class="nav-link" href="#">Twitter</a> <!-- changed text -->
+					<li class="nav-item"> 
+						<a class="nav-link" href="https://github.com/Px0006">GitHub</a> <!-- added link -->
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{% static 'resume.pdf' %}">Resume</a> <!-- static resume -->
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Blog</a> <!-- changed text -->
+						<a class="nav-link" href="{% url 'allblogs' %}">Blog</a> <!-- linked to allblogs html-->
 					</li>
 				</ul>
 			</div>
-		</nav>
+		</nav> <!-- Nav  -->
 	</header> <!-- imported Nav from Navbar -->
 
 	<main role="main">
@@ -66,7 +65,7 @@
 				<h1 class="jumbotron-heading">Hi, I'm Wes</h1> <!-- changed text -->
 				<p class="lead text-muted">I'm an aspiring fullstack developer who loves the simplicity of Django!</p> <!-- changed text -->
 				<p>
-					<a href="mailto:email@email.com" class="btn btn-primary my-2">Email Me</a> <!-- changed text + mailto -->
+					<a href="mailto:wespython3@gmail.com" class="btn btn-primary my-2">Email Me</a> <!-- changed text + mailto -->
 				</p>
 				<img src="{% static 'Wes.jpg' %}" height="300" /> <!-- static image -->
 			</div>

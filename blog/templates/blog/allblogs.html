@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Jekyll v3.8.5">
-	<title>Album example · Bootstrap</title>
+	<title>Wes's Blog</title> <!-- Title replaced -->
 
 	<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -38,59 +38,59 @@
 </head>
 <body>
 	<header> <!-- imported Nav from Navbar -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="#">Wesley Ruede</a>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Nav --> <!-- Nav from home  -->
+			<a class="navbar-brand" href="{% url 'home' %}">Wesley Ruede</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ml-auto"> <!-- moved nav-items left -->
 					<li class="nav-item"> 
-						<a class="nav-link" href="#">Twitter</a> <!-- changed text -->
+						<a class="nav-link" href="https://github.com/Px0006">GitHub</a> <!-- changed link -->
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{% static 'resume.pdf' %}">Resume</a> <!-- static resume -->
 					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="#">Blog</a> <!-- changed text -->
+					<li class="nav-item">
+						<a class="nav-link active" href="{% url 'allblogs' %}">Blog</a> <!-- created link to allblogs.html-->
 					</li>
 				</ul>
 			</div>
-		</nav>
+		</nav> <!-- Nav  --> <!-- Nav from home  -->
 	</header> <!-- imported Nav from Navbar -->
 
 	<main role="main"> <!-- new main -->
 		<div class="container"> <!-- created container -->
 
-		<h1 class="text-center pt-3">Welcome to Wes's Blog</h1> <!-- padding top 3 -->
-		<br/>
-		<br/>
-		<h2>Latest Post</h2>
-		<hr/> <!-- thin light line -->
-		
-		{% for blog in blogs.all %} <!-- begin for loop iteration -->
-		<a href=""><h3>{{ blog.title }}</h3></a> <!-- .models variable href for link to next page -->
-		{{ blog.pub_date_pretty }} <!-- .models variable -->
-		<br />
-		<img class="img-fluid" src="{{ blog.image.url }}" height="200" width="200" /> <!-- .models variable img-fluid for better text wrap and height/width to designate size of img directly  -->
-		<br />
-		<p>{{ blog.summary }}</p> <!-- returns 100 characters max from summary function -->
-		{% endfor %} <!-- finish for loop iteration -->
-		
+			<h1 class="text-center pt-3">Welcome to Wes's Blog</h1> <!-- padding top 3 -->
+			<br/>
+			<br/>
+			<h2>Latest Post</h2>
+			<hr/> <!-- thin light line -->
+
+			{% for blog in blogs.all %} <!-- begin for loop iteration -->
+			<a href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a> <!-- .models variable href for link to next page --> <!-- href for blog details to display db in reference to blog.id -->
+			{{ blog.pub_date_pretty }} <!-- .models variable -->
+			<br />
+			<img class="img-fluid" src="{{ blog.image.url }}" height="200" width="200" /> <!-- .models variable img-fluid for better text wrap and height/width to designate size of img directly  -->
+			<br />
+			<p>{{ blog.summary }}</p> <!-- returns 100 characters max from summary function -->
+			{% endfor %} <!-- finish for loop iteration -->
+
 		</div>
 
 		
 	</main>
 
-	</main>
+</main>
 
-	<footer class="text-muted">
-		<div class="container">
-			<p class="text-center">© Wesley Ruede {% now "Y" %}</p> <!-- changed footer -->
-		</div>
-	</footer>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <!-- needed JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <!-- needed JS -->
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <!-- needed JS  -->
+<footer class="text-muted">
+	<div class="container">
+		<p class="text-center">© Wesley Ruede {% now "Y" %}</p> <!-- changed footer -->
+	</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <!-- needed JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <!-- needed JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <!-- needed JS  -->
 </body>
 </html>
