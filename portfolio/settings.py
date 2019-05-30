@@ -114,3 +114,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static') #added static root
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #added media root
 MEDIA_URL = '/media/'
+
+#overwirte previous settings with it being at the end
+try:
+    from local_settings import * #import all local settings
+except ImportError: #if local_settings is not found
+    pass #pass and don't crash django 
